@@ -1,0 +1,16 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "BuildCFile",
+            "type": "shell",
+            "command": "gcc -Wall -g /home/baskar/Desktop/C/Learn/Palindrome.c -o debug.out",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
