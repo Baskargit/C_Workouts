@@ -1,0 +1,11 @@
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/bin/Debug/netcoreapp2.2/LotteryTicket.deps.json
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/bin/Debug/netcoreapp2.2/LotteryTicket.runtimeconfig.json
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/bin/Debug/netcoreapp2.2/LotteryTicket.runtimeconfig.dev.json
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/bin/Debug/netcoreapp2.2/LotteryTicket.dll
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/bin/Debug/netcoreapp2.2/LotteryTicket.pdb
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/obj/Debug/netcoreapp2.2/LotteryTicket.csprojAssemblyReference.cache
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/obj/Debug/netcoreapp2.2/LotteryTicket.csproj.CoreCompileInputs.cache
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/obj/Debug/netcoreapp2.2/LotteryTicket.AssemblyInfoInputs.cache
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/obj/Debug/netcoreapp2.2/LotteryTicket.AssemblyInfo.cs
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/obj/Debug/netcoreapp2.2/LotteryTicket.dll
+/home/baskar/Desktop/C/TopCoder/Recursion/LotteryTicket/obj/Debug/netcoreapp2.2/LotteryTicket.pdb
