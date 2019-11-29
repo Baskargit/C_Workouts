@@ -1,0 +1,14 @@
+1
+// Search for matching word in a 2D matrix in all directions
+link : https://www.geeksforgeeks.org/search-a-word-in-a-2d-grid-of-characters/
+Use x,y axis logic to solve
+
+2
+// Count Possible Paths
+link : https://www.geeksforgeeks.org/zoho-interview-experience-set-39-on-campus-drive-for-software-developer/
+Given a N*N binary matrix and the co-ordinate points of start and destination, 
+find the number of possible path between them.
+
+3
+// Shuffle given array
+link : https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/

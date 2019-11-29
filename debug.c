@@ -1,108 +1,171 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-struct Node
-{
-    int position;
-    struct Node *nextPosition;
-};
-
-void deleteNode(struct Node **head,struct Node *currentNode,struct Node *toBeDeleted);
-void pushNode(struct Node **head,int position);
-void displayList(struct Node *node);
-int getSurvivor(struct Node **head,int m);
+void horizontal(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength);
+void vertical(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength);
+void diagonal(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength);
 
 int main()
 {
-    int n = 3,m = 1;
-
-    struct Node *head = NULL;
-
-    for (int i = 1; i <= n; i++)
+    int m,n;
+    scanf("%d%d",&m,&n);
+    
+    getchar();
+    char arr[m][n];
+    for (int i = 0; i < m; i++)
     {
-        pushNode(&head,i);
+        for (int j = 0; j < n; j++)
+        {
+            scanf("%c",&arr[i][j]);
+        }
+    }
+    
+    getchar();
+    char searchfor[101];
+    scanf("%[^\n]s",searchfor);
+
+    int length = strlen(searchfor);
+
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (arr[i][j] == searchfor[0])
+            {
+                // Horizontal
+                horizontal(m,n,arr,i,j,searchfor,length);
+
+                // Vertical
+                vertical(m,n,arr,i,j,searchfor,length);
+
+                // Diagonal
+                diagonal(m,n,arr,i,j,searchfor,length);
+            }   
+        }    
     }
 
-    displayList(head);
-    printf("%d\n",getSurvivor(&head,m));
+    printf("\n");
     
     return 0;
 }
 
-int getSurvivor(struct Node **head,int m)
+void diagonal(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength)
 {
-    int count = 0;
-    struct Node *temp = *head;
-    struct Node *previousNode;
+    char compare[strlength+1];
+    int i=currentrow,j=currentcol;
+    int counter = 0;
 
-    while (temp->nextPosition != temp)
+    // Diagonal up
+    // left
+    while ((j >= 0 && i >= 0) && counter < strlength)
     {
-        if (count == m) {
-            deleteNode(head,previousNode,temp);
-            count = 0;
-        } else
-        {
-            count++;
-            previousNode = temp;
-            temp = temp->nextPosition;
-        }
+        compare[counter++] = arr[i--][j--];
+    }
+    compare[counter] = '\0';
+    if (strcmp(searchfor,compare) == 0) {
+        printf("%d %d,",currentrow,currentcol);
+    }
+    // right
+    i=currentrow,j=currentcol;
+    counter = 0;
+    while ((j < col && i >= 0) && counter < strlength)
+    {
+        compare[counter++] = arr[i--][j++];
+    }
+    compare[counter] = '\0';
+    if (strcmp(searchfor,compare) == 0) {
+        printf("%d %d,",currentrow,currentcol);
     }
 
-    return temp->position;
-}
-
-void deleteNode(struct Node **head,struct Node *currentNode,struct Node *toBeDeleted)
-{
-    if (toBeDeleted != *head && toBeDeleted->nextPosition != *head)
+    // Diagonal down
+    // left
+    i=currentrow,j=currentcol;
+    counter = 0;
+    while ((j >= 0 && i < row) && counter < strlength)
     {
-        currentNode->nextPosition = toBeDeleted->nextPosition;
-        free(toBeDeleted);
-    } else if(toBeDeleted == *head) {
-        currentNode->nextPosition = toBeDeleted->nextPosition;
-        free(toBeDeleted);
-        *head = currentNode->nextPosition;
-    } else {
-        currentNode->nextPosition = *head;
-        free(toBeDeleted);
+        compare[counter++] = arr[i++][j--];
     }
+    compare[counter] = '\0';
+    if (strcmp(searchfor,compare) == 0) {
+        printf("%d %d,",currentrow,currentcol);
+    }
+    // right
+    i=currentrow,j=currentcol;
+    counter = 0;
+    while ((j < col && i < row) && counter < strlength)
+    {
+        compare[counter++] = arr[i++][j++];
+    }
+    compare[counter] = '\0';
+    if (strcmp(searchfor,compare) == 0) {
+        printf("%d %d,",currentrow,currentcol);
+    }
+
 }
 
-void displayList(struct Node *head)
+void horizontal(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength)
 {
-    struct Node *temp = head;
+    char compare[strlength+1];
 
-    if (head != NULL)
+    int j = currentcol;
+    int counter = 0;
+
+    // left
+    while (j >= 0 && counter < strlength)
     {
-        do
-        {
-            printf("%d ",temp->position);
-            temp = temp->nextPosition;
-        } while (temp != head);
+        compare[counter++] = arr[currentrow][j--];
+    }
+    compare[counter] = '\0';
+
+    if (strcmp(searchfor,compare) == 0) {
+        printf("%d %d,",currentrow,currentcol);
     }
     
-    printf("\n");
+    // right
+    j = currentcol;
+    counter = 0;
+
+    while (j < col && counter < strlength)
+    {
+        compare[counter++] = arr[currentrow][j++];
+    }
+    compare[counter] = '\0';
+
+    if (strcmp(searchfor,compare) == 0) {
+        printf("%d %d,",currentrow,currentcol);
+    }
     
 }
 
-void pushNode(struct Node **head,int position)
+void vertical(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength)
 {
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->position = position;
+    char compare[strlength+1];
 
-    if (head != NULL && *head != NULL )
+    int i = currentrow;
+    int counter = 0;
+
+    // up
+    while (i >= 0 && counter < strlength)
     {
-        struct Node *temp = *head;
-
-        while (temp->nextPosition != *head)
-        {
-            temp = temp->nextPosition;
-        }
-
-        temp->nextPosition = newNode;
-        newNode->nextPosition = *head;
-        return;
+        compare[counter++] = arr[i--][currentcol];
     }
+    compare[counter] = '\0';
 
-    newNode->nextPosition = newNode;
-    *head = newNode;
+    if (strcmp(searchfor,compare) == 0) {
+        printf("%d %d,",currentrow,currentcol);
+    }
+    
+    // down
+    i = currentrow;
+    counter = 0;
+
+    while (i < row && counter < strlength)
+    {
+        compare[counter++] = arr[i++][currentcol];
+    }
+    compare[counter] = '\0';
+
+    if (strcmp(searchfor,compare) == 0) {
+        printf("%d %d,",currentrow,currentcol);
+    }
 }
