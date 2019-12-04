@@ -12,3 +12,32 @@ find the number of possible path between them.
 3
 // Shuffle given array
 link : https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/
+
+4 
+// Wildcard pattern matching (Set-36)
+link : https://practice.geeksforgeeks.org/problems/wildcard-pattern-matching/1
+
+5
+// Word Break (Set-36)
+link : https://practice.geeksforgeeks.org/problems/word-break/0
+
+6
+// Next greater element (Set-34)
+link : https://www.geeksforgeeks.org/next-greater-element/
+link : https://www.geeksforgeeks.org/next-greater-element-in-same-order-as-input/
+
+7
+// Distinct permutations
+link : https://www.geeksforgeeks.org/distinct-permutations-string-set-2/
+
+8
+// No of days from the given dates
+practice : https://practice.geeksforgeeks.org/problems/find-number-of-days-between-two-given-dates/0
+link : https://www.geeksforgeeks.org/find-number-of-days-between-two-given-dates/
+
+
+// ==========================================> Complex sets <========================================================
+
+https://www.geeksforgeeks.org/zoho-interview-experience-set-33-off-campus-software-developer/
+
+

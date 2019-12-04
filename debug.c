@@ -1,171 +1,39 @@
-#include <stdio.h>
-#include <string.h>
+/*
+4.array of numbers were given to find a number which has same sum of numbers in it’s either side.
 
-void horizontal(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength);
-void vertical(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength);
-void diagonal(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength);
+I/p 1, 2, 3, 7, 6
+
+O/p 7(has 1+ 2+3 in left 6 in right)
+
+*/
+
+#include <stdio.h>
 
 int main()
 {
-    int m,n;
-    scanf("%d%d",&m,&n);
-    
-    getchar();
-    char arr[m][n];
-    for (int i = 0; i < m; i++)
+    unsigned long int n = 5;
+    unsigned long int arr[] = {1,3,5,2,2};
+
+    long int position = -1;
+
+    for (long int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
+        unsigned long int leftsum = 0,rightsum = 0;
+
+        for (long int j = 0; j < i - 1; j++)
         {
-            scanf("%c",&arr[i][j]);
+            leftsum += arr[j];
         }
-    }
-    
-    getchar();
-    char searchfor[101];
-    scanf("%[^\n]s",searchfor);
 
-    int length = strlen(searchfor);
-
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
+        for (long int j = i+1; j < n; j++)
         {
-            if (arr[i][j] == searchfor[0])
-            {
-                // Horizontal
-                horizontal(m,n,arr,i,j,searchfor,length);
+            rightsum += arr[j];
+        }
 
-                // Vertical
-                vertical(m,n,arr,i,j,searchfor,length);
-
-                // Diagonal
-                diagonal(m,n,arr,i,j,searchfor,length);
-            }   
-        }    
+        position = (leftsum == rightsum) ? i+1 :position;
     }
 
-    printf("\n");
+    printf("%ld",position);
     
     return 0;
-}
-
-void diagonal(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength)
-{
-    char compare[strlength+1];
-    int i=currentrow,j=currentcol;
-    int counter = 0;
-
-    // Diagonal up
-    // left
-    while ((j >= 0 && i >= 0) && counter < strlength)
-    {
-        compare[counter++] = arr[i--][j--];
-    }
-    compare[counter] = '\0';
-    if (strcmp(searchfor,compare) == 0) {
-        printf("%d %d,",currentrow,currentcol);
-    }
-    // right
-    i=currentrow,j=currentcol;
-    counter = 0;
-    while ((j < col && i >= 0) && counter < strlength)
-    {
-        compare[counter++] = arr[i--][j++];
-    }
-    compare[counter] = '\0';
-    if (strcmp(searchfor,compare) == 0) {
-        printf("%d %d,",currentrow,currentcol);
-    }
-
-    // Diagonal down
-    // left
-    i=currentrow,j=currentcol;
-    counter = 0;
-    while ((j >= 0 && i < row) && counter < strlength)
-    {
-        compare[counter++] = arr[i++][j--];
-    }
-    compare[counter] = '\0';
-    if (strcmp(searchfor,compare) == 0) {
-        printf("%d %d,",currentrow,currentcol);
-    }
-    // right
-    i=currentrow,j=currentcol;
-    counter = 0;
-    while ((j < col && i < row) && counter < strlength)
-    {
-        compare[counter++] = arr[i++][j++];
-    }
-    compare[counter] = '\0';
-    if (strcmp(searchfor,compare) == 0) {
-        printf("%d %d,",currentrow,currentcol);
-    }
-
-}
-
-void horizontal(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength)
-{
-    char compare[strlength+1];
-
-    int j = currentcol;
-    int counter = 0;
-
-    // left
-    while (j >= 0 && counter < strlength)
-    {
-        compare[counter++] = arr[currentrow][j--];
-    }
-    compare[counter] = '\0';
-
-    if (strcmp(searchfor,compare) == 0) {
-        printf("%d %d,",currentrow,currentcol);
-    }
-    
-    // right
-    j = currentcol;
-    counter = 0;
-
-    while (j < col && counter < strlength)
-    {
-        compare[counter++] = arr[currentrow][j++];
-    }
-    compare[counter] = '\0';
-
-    if (strcmp(searchfor,compare) == 0) {
-        printf("%d %d,",currentrow,currentcol);
-    }
-    
-}
-
-void vertical(int row,int col,char arr[][col],int currentrow,int currentcol,char *searchfor,int strlength)
-{
-    char compare[strlength+1];
-
-    int i = currentrow;
-    int counter = 0;
-
-    // up
-    while (i >= 0 && counter < strlength)
-    {
-        compare[counter++] = arr[i--][currentcol];
-    }
-    compare[counter] = '\0';
-
-    if (strcmp(searchfor,compare) == 0) {
-        printf("%d %d,",currentrow,currentcol);
-    }
-    
-    // down
-    i = currentrow;
-    counter = 0;
-
-    while (i < row && counter < strlength)
-    {
-        compare[counter++] = arr[i++][currentcol];
-    }
-    compare[counter] = '\0';
-
-    if (strcmp(searchfor,compare) == 0) {
-        printf("%d %d,",currentrow,currentcol);
-    }
 }

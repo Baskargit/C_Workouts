@@ -21,9 +21,6 @@ Given a number, print all the code that can be formed with z={a=1, .., z=26}.
 int main()
 {
     char num[] = "1124";
-    
-    int maxlength = 1;
-    int minlength = 1;
 
     // Print 1 comb
     int i = 0 ,j;
