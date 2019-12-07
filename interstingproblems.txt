@@ -2,6 +2,7 @@
 // Search for matching word in a 2D matrix in all directions
 link : https://www.geeksforgeeks.org/search-a-word-in-a-2d-grid-of-characters/
 Use x,y axis logic to solve
+For searching in all 8 direction 
 
 2
 // Count Possible Paths
@@ -35,9 +36,23 @@ link : https://www.geeksforgeeks.org/distinct-permutations-string-set-2/
 practice : https://practice.geeksforgeeks.org/problems/find-number-of-days-between-two-given-dates/0
 link : https://www.geeksforgeeks.org/find-number-of-days-between-two-given-dates/
 
+9
+// Form a larger number from the given array of integers
+// https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
+// https://www.geeksforgeeks.org/arrange-given-numbers-form-biggest-number-set-2/
+// https://www.geeksforgeeks.org/analysis-of-different-sorting-techniques/
+
+10
+2D Matrix path finding from fixed (or) variable source TO fixed (or) variable destination
+// link : https://www.geeksforgeeks.org/check-possible-path-2d-matrix/
+// link : https://www.geeksforgeeks.org/find-whether-path-two-cells-matrix/ 
+
+11 
+Triangle pattern with numbers
+https://www.geeksforgeeks.org/zoho-interview-experience-set-23-off-campus/
+
 
 // ==========================================> Complex sets <========================================================
 
 https://www.geeksforgeeks.org/zoho-interview-experience-set-33-off-campus-software-developer/
-
-
+https://www.geeksforgeeks.org/zoho-campus-drive-set-25-software-developer/
