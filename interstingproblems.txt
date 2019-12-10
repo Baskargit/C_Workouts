@@ -51,6 +51,30 @@ link : https://www.geeksforgeeks.org/find-number-of-days-between-two-given-dates
 Triangle pattern with numbers
 https://www.geeksforgeeks.org/zoho-interview-experience-set-23-off-campus/
 
+12
+Prime sum
+https://practice.geeksforgeeks.org/problems/primes-sum/0
+
+13
+LRU Cache (Set-17)
+https://practice.geeksforgeeks.org/problems/lru-cache/1
+
+14 
+Sort number based on MSB (Set-17)
+sort numbers based on digits starting from most significant numbers. 
+Eg: input-100 1 11 21 2 3. Output-1 100 11 2 21 3
+
+15
+Possible Permutations of string
+https://www.geeksforgeeks.org/permutations-string-using-iteration/
+
+16
+Rotate Matrix by 0 to 360 deg
+https://practice.geeksforgeeks.org/problems/rotate-by-90-degree/0
+
+17 (Set-13)
+binary-decimal
+https://www.geeksforgeeks.org/represent-number-sum-minimum-possible-psuedobinary-numbers/
 
 // ==========================================> Complex sets <========================================================
 

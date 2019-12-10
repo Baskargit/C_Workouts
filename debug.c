@@ -2,46 +2,24 @@
 
 int main()
 {
-    int n,k;
-    scanf("%d%d",&n,&k);
+    int n = 130;
 
-    int arr[n];
-    for (int i = 0; i < n; i++)
+    int i = 120;
+    while (i <= n)
     {
-        scanf("%d",&arr[i]);
-    }
+        int rem = i % 10;
 
-    int i=0,j=0;
-
-    while (i < n && j < n)
-    {
-        int subarrmax = arr[i];
-        j = i + 1;
-
-        while (j < i+k)
+        if(rem == 0 || rem == 1) 
         {
-            subarrmax = (arr[j] > subarrmax) ? arr[j] : subarrmax;
-            j++;
-        }
+            int quo = i;
 
-        printf("curr i = %d && inc i = ",i);
+            if(quo == 0 || quo == 1 || quo == 10 || quo == 11) {
+                printf("%d ",i);
+            }
+        }
         i++;
-        printf("%d => ",i);
-        // j = i + 1;
-        printf("%d\n",subarrmax);
     }
-    
     printf("\n");
-    
+
     return 0;
 }
-
-/*
-2
-9 3
-1 2 3 1 4 5 2 3 6
-
-10 4
-8 5 10 7 9 4 15 12 90 13
-
-*/
