@@ -8,7 +8,7 @@ bool IsEvenNumber(int n);
 int main()
 {
     int numbers[] = {10,36,54,89,12,24};
-    int weight[] = {0,0,0,0,0,0};
+    int weight[] = {0};
     int length = sizeof(numbers)/sizeof(int);
 
     for (int i = 0; i < length; i++)
@@ -64,10 +64,10 @@ bool IsPerfectSquare(int n)
 
 bool IsMulOf4AndDivOf6(int n)
 {
-    return (n%4 == 0 && n%6 == 0) ? true : false;
+    return (n % 4 == 0 && n % 6 == 0) ? true : false;
 }
 
 bool IsEvenNumber(int n)
 {
-    return (n%2 == 0 ) ? true : false;
+    return (n % 2 == 0 ) ? true : false;
 }

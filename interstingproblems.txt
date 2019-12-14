@@ -17,6 +17,7 @@ link : https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-sh
 4 
 // Wildcard pattern matching (Set-36)
 link : https://practice.geeksforgeeks.org/problems/wildcard-pattern-matching/1
+https://www.geeksforgeeks.org/wildcard-character-matching/
 
 5
 // Word Break (Set-36)
@@ -75,6 +76,38 @@ https://practice.geeksforgeeks.org/problems/rotate-by-90-degree/0
 17 (Set-13)
 binary-decimal
 https://www.geeksforgeeks.org/represent-number-sum-minimum-possible-psuedobinary-numbers/
+
+18 (Set-10)
+Print all subsequences of a string
+https://www.geeksforgeeks.org/print-subsequences-string/
+
+19
+Permutations and Combinations of a given string
+
+20
+https://www.geeksforgeeks.org/expression-evaluation/
+
+21
+given a number u need to print all combination of aphabets for that number
+https://www.geeksforgeeks.org/combinations-strings-can-used-dial-given-phone-number/
+https://www.geeksforgeeks.org/find-possible-words-phone-digits/
+
+22
+// Excel-sheet
+https://practice.geeksforgeeks.org/problems/excel-sheet/0
+
+23
+// Bitoinc Sort
+https://practice.geeksforgeeks.org/problems/bitonic-generator-sort/0
+
+24
+// Merge without extra space (***)
+https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays/0
+
+25 (The Celebrity Problem using stack)
+26 (Paranthesis validation using stack)
+27 (Mathmetical expression validation)
+
 
 // ==========================================> Complex sets <========================================================
 

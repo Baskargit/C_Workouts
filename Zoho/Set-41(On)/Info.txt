@@ -1,0 +1,125 @@
+// Overall mostly easy
+
+
+Zoho Interview Experience – On campus | Set 41
+Zoho was a two day process. The first day had the aptitude and coding round.
+
+The second day consisted of the module coding and interview rounds.
+
+Round 1: Aptitude
+
+
+
+The first round consists of 15 technical MCQ’s and 10 aptitude questions. This is a pen and paper round.
+There are NO choices for the questions. You have to write the answers.
+
+Mark weightage:
+
+Technical:
+
+Q.No 1-10 – 1 mark each
+
+Q.No 11-15 – 2 marks each
+
+Aptitude – Q.No 1 -10 – 1 mark each
+
+Total Questions: 25
+
+Total Marks: 30
+
+The technical questions consisted of :
+
+Pointers
+Arrays using Pointers(matrices and multidimensional arrays included)
+Operator Precedence and Associativity
+String Manipulation
+Loops ( basic iteration questions )
+Operators(++, –, arithmetic, assignment, logical, relational, conditional, bitwise)
+Recursion
+All the above topics are very important. Also solve questions based on pointers and operator precedence. Refer the below links.
+
+
+https://www.geeksforgeeks.org/difference-between-p-p-and-p/
+
+https://www.geeksforgeeks.org/difference-const-char-p-char-const-p-const-char-const-p/
+
+Sample questions asked was about permutations, for loop manipulation(eg: for( i=0; i=i-1;i=1)).
+
+The general aptitude questions consisted of:
+
+Logical reasoning
+Pattern completion
+Car in the box puzzle
+Pipes and Cisterns
+Probability
+Complete the number series
+Count number of shapes
+Tips :
+
+Solve the first round calmly because it is the round where many students are easily filtered out.
+Concentrate on technical aptitude as it has more weightage.
+The round is about 1 hour.
+Round 2: Coding
+
+The second round was a coding round. Zoho did not use any technical platform such as Hackerrank or Hackerearth for coding. So there were no automated testcases.
+
+We could code in any language of our choice. The paper consisted of 5 questions.
+
+Sort the given elements in decending order based on the number of factors of each element – Solution 1
+Find whether the given number is palindrome or not. Don’t use arrays or strings
+Reverse the given string keeping the position of special characters intact
+Find the shortest path from one element to another element in a matrix using right and down moves alone. The attached solution uses moves in all directions. – Solution 4
+Pattern
+Round 3:
+
+The third round consisted of module coding. As told before, this was the first round on the second day.
+
+
+The module given to me was Flight Reservation system. There were several modules where we had to implementation functionalities. Some are mentioned below:
+
+Get input from two flights – 101 and 102 with different passengers for each flight.
+After booking seats, display the seat number to the passenger.
+The meal has an additional charge which has to be included
+Surge pricing was that every ticket (business/ economy) was incremented by a specific price after each successful booking.
+A flight summary has to be displayed.
+Cancellation of flights should be done. The refund should be calculated properly.
+I used structures and file manipulation for completing the module round.
+
+Round 4: Technical interview
+
+I had two technical interviews.
+
+The first interview had the following questions:
+
+Tell me about yourself where you have to speak as much as possible.
+Project questions.
+C questions about static variables.
+The possible moves a knight can make in a chessboard.
+Puzzles. Use Geeksforgeeks for puzzle reference. Solve how many ever you can.
+Artifical intelligence usage in college campus.
+What is NoSQL and how are the documents stored?
+OOPS concepts
+How does a DNS server work?
+FTP and HTTP usage.
+SQL Queries
+The second interview consisted of the following questions:
+
+Tell me about yourself
+What is minified css?(bootstrap.min.css)
+DOM when a webpage loads
+Java questions- Singleton class
+Garbage collection in Java
+CSS insertion types
+Bootstrap questions
+Linked list and other data structures questions
+The questions were based on my area of interest. Mine was Web Development and Data structures.
+
+Java knowledge is very important for attending Zoho. I learnt some basics of Java alone.
+
+Round 5: General interview
+
+This was a general interview where they tested the candidate based on situation questions. Normal questions were asked such as what salary package do you want to be put in and why. Would you work or go for masters? What do you like about Zoho?
+
+ 
+
+They tested each candidate based on their attitude, the approach to each question and their way of answering each question. Be honest and do well. All the best! I
