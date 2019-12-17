@@ -1,3 +1,14 @@
+/*
+1
+3 4
+A B C E
+S F C S 
+A D E E
+SEE
+
+*/
+
+// Inefficient and Sphageti code version
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>

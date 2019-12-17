@@ -31,6 +31,12 @@ int main()
                        "IDEQAPRACTICE"
                        };
 
+    // int m = 3,n = 4;
+    // char grid[][13] = {"ABCE",
+    //                    "SFCS",
+    //                    "ADEE"
+    //                    };
+
     char searchfor[] = "EEE";
     int searchforlength = strlen(searchfor);
 
@@ -49,6 +55,7 @@ int main()
                 int tempi = i, tempj = j;
                 bool firstime = true;
                 int inciby,incjby;
+
                 // Start from 2 letter of 'searchfor'
                 for (int k = 1; k < searchforlength; k++)
                 {
@@ -59,7 +66,9 @@ int main()
                     {
                         if((tempi + x[l] >= 0 && tempi + x[l] < m && tempj + y[l] >= 0 && tempj + y[l] < n)) 
                         {
-                            if(firstime && grid[tempi + x[l]][tempj + y[l]] == searchfor[k]) {
+                            if(firstime && grid[tempi + x[l]][tempj + y[l]] == searchfor[k]) 
+                            {
+                                // If Set ,the searching starts in fixed direction
                                 inciby = x[l];
                                 incjby = y[l];
                                 tempi = tempi + x[l];

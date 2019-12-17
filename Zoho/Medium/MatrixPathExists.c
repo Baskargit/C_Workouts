@@ -59,7 +59,7 @@ int main()
     int x[] = {-1,0,1,0};
     int y[] = {0,1,0,-1};
     int traversedpaths[n][n];
-    int altpathi,altpathj;
+    int altpathi,altpathj,altpathcount = 0;
     setTraversedPaths(n,traversedpaths);
 
     while (proceed)
@@ -101,7 +101,7 @@ int main()
                     int currenti = sourcei + x[i];
                     int currentj = sourcej + y[i];
 
-                    if(grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
+                    if(((currenti >=0 && currenti < n) && (currentj >=0 && currentj < n)) && grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
                     {
                         // Set previous path as traversed
                         traversedpaths[sourcei][sourcej] = 1;
@@ -110,10 +110,7 @@ int main()
                         sourcei = currenti;
                         sourcej = currentj;
                         break;
-                    } else {
-                        ispathfound = proceed = false;
                     }
-                    
                 }
             }
             else if(pathcount > 1) //More than one path available from the current position
@@ -127,7 +124,7 @@ int main()
                     int currentj = sourcej + y[i];
 
                     // Do not set the current path as a traversed
-                    if(grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
+                    if(((currenti >=0 && currenti < n) && (currentj >=0 && currentj < n)) && grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
                     {
                         traversedpaths[currenti][currentj] = 1;
                         // Set next open path
@@ -154,7 +151,7 @@ int main()
                         int currenti = sourcei + x[i];
                         int currentj = sourcej + y[i];
 
-                        if(grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
+                        if(((currenti >=0 && currenti < n) && (currentj >=0 && currentj < n)) && grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
                         {
                             // traversedpaths[currenti][currentj] = 1;
                             // Set next open path
@@ -205,3 +202,45 @@ void setTraversedPaths(int n,int traversedpaths[n][n])
         }
     }
 }
+
+/*
+Test cases
+
+Example:
+Input:
+2
+4
+3 0 0 0 0 3 3 0 0 1 0 3 0 2 3 3 
+3
+0 3 2 3 0 0 1 0 0
+
+Output:
+1
+0
+
+Input
+4
+0 0 3 3
+2 3 3 3
+0 3 3 3
+1 3 3 3
+
+4
+0 0 3 3
+2 0 3 3
+0 3 3 3
+1 3 3 3
+
+4
+2 0 3 3
+0 3 3 3
+0 3 3 3
+1 0 3 3
+
+4
+2 3 3 3
+0 0 3 3
+0 0 3 3
+1 3 3 3
+
+*/
