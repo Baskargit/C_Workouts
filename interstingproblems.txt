@@ -1,10 +1,10 @@
-1
+1 (Completed)
 // Search for matching word in a 2D matrix in all directions
 link : https://www.geeksforgeeks.org/search-a-word-in-a-2d-grid-of-characters/
 Use x,y axis logic to solve
 For searching in all 8 direction 
 
-2
+2 (Completed)
 // Count Possible Paths
 link : https://www.geeksforgeeks.org/zoho-interview-experience-set-39-on-campus-drive-for-software-developer/
 Given a N*N binary matrix and the co-ordinate points of start and destination, 
@@ -113,3 +113,34 @@ https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays/0
 
 https://www.geeksforgeeks.org/zoho-interview-experience-set-33-off-campus-software-developer/
 https://www.geeksforgeeks.org/zoho-campus-drive-set-25-software-developer/
+
+
+// ==========================================> Topic wise Intersting problems <===================================
+
+Topic : ====>  "{Arrays}"
+Find path in a 2D matrix
+Search for a given word in a 2D matrix
+Spiral print a given 2D matrix
+Rotate(0 to 360deg) 2D matrix => https://www.geeksforgeeks.org/array-rotation/ => https://practice.geeksforgeeks.org/problems/rotate-and-delete/0
+Shuffle given array(1D)
+
+Topic : ====> "{Strings}"
+Possible string combinations
+Wildcard pattern matching
+Paranthesis checker
+Mathmetical expression validation
+Simple expression validation
+
+Topic : ====> "{Realtime problems}"
+Railway platform problems
+Job sequence
+Celebrity problem
+Number of days between given dates => https://practice.geeksforgeeks.org/problems/find-number-of-days-between-two-given-dates/0
+Find the result subtraction, multiplication, division of two integers using + operator.
+
+Topic : ====> "{Sorting}"
+Quicksort
+Insertionsort
+
+Topic : ====> "{Searching}"
+BinarySearch

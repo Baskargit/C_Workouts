@@ -1,4 +1,4 @@
-// 4:05
+// 10:10
 /*
 Given a N X N matrix (M) filled with 1, 0, 2, 3. 
 The task is to find whether there is a path possible from source to destination, 
@@ -14,10 +14,17 @@ Note: there is only single source and single destination.
 
 */
 
+// Not working
+
 #include<stdio.h>
 #include<stdbool.h>
+#define TRAVERSEDCONS 9
 
-void setTraversedPaths(int n,int traversedpaths[n][n]);
+void initializeTraversedPaths(int n,int traversedpaths[n][n]);
+int getPathcount(int n,int grid[n][n],int traversedpaths[n][n],int currenti,int currentj,int directioncount,int x[],int y[]);
+
+void printTraversedPaths(int n,int traversedpaths[n][n]);
+void printBacktracks(int n,int backtrackcount,int backtracks[n][2]);
 
 int main()
 {
@@ -58,144 +65,118 @@ int main()
     
     int x[] = {-1,0,1,0};
     int y[] = {0,1,0,-1};
+    int directioncount = 4;
     int traversedpaths[n][n];
-    int altpathi,altpathj;
-    setTraversedPaths(n,traversedpaths);
+    int backtracks[n][2],backtrackcount = 0,tempBTC;
+    int currenti = sourcei,currentj = sourcej;
 
-    while (proceed)
+    initializeTraversedPaths(n,traversedpaths);
+
+    while (proceed && !ispathfound)
     {
-        // Check whether destination is nearby (or) not
-        for (int i = 0; i < 4; i++)
+        // Get pathcount
+        int pathcount = getPathcount(n,grid,traversedpaths,currenti,currentj,directioncount,x,y);
+        
+        if (pathcount == 1) // If only one path
         {
-            int currenti = sourcei + x[i];
-            int currentj = sourcej + y[i];
-            
-            // If nearby
-            if((currenti >=0 && currenti < n) && (currentj >=0 && currentj < n) && grid[currenti][currentj] == 2) 
+            for (int i = 0; i < directioncount; i++)
             {
-                ispathfound = true;
-                proceed = false;
-                break;
-            }
-        }
+                int tempi = currenti+x[i];
+                int tempj = currentj+y[i];
 
-        // If not nearby check blank wall available to move (or) not 
-        if (proceed)
-        {
-            // Get paths Count
-            int pathcount = 0;
-            for (int i = 0; i < 4; i++)
-            {
-                int currenti = sourcei + x[i];
-                int currentj = sourcej + y[i];
-
-                pathcount = (((currenti >=0 && currenti < n) && (currentj >=0 && currentj < n)) 
-                                && grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0) 
-                                ? pathcount + 1 : pathcount;
-            }
-
-            if (pathcount == 1) // Only Onepath available
-            {
-                for (int i = 0; i < 4; i++)
+                if(tempi >= 0 && tempi < n && tempj >= 0 && tempj < n && traversedpaths[tempi][tempj] != TRAVERSEDCONS)
                 {
-                    int currenti = sourcei + x[i];
-                    int currentj = sourcej + y[i];
-
-                    if(grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
+                    if (grid[tempi][tempj] == 3)
                     {
-                        // Set previous path as traversed
-                        traversedpaths[sourcei][sourcej] = 1;
-
-                        // Set next open path
-                        sourcei = currenti;
-                        sourcej = currentj;
+                        // Set the current path as traversed
+                        traversedpaths[currenti][currentj] = TRAVERSEDCONS;
+                        currenti = tempi;
+                        currentj = tempj;
                         break;
-                    } else {
-                        ispathfound = proceed = false;
+                    }
+                    else if (grid[tempi][tempj] == 2)
+                    {
+                        ispathfound = true;
+                        break;
                     }
                     
                 }
             }
-            else if(pathcount > 1) //More than one path available from the current position
+        }
+        else if (pathcount > 1) // If multiple paths available
+        {
+            isAlternatepathAvailable = true;
+            backtracks[backtrackcount][0] = currenti;
+            backtracks[backtrackcount][1] = currentj;
+            backtrackcount++;
+            tempBTC = backtrackcount;
+
+            for (int i = 0; i < directioncount; i++)
             {
-                altpathi = sourcei;
-                altpathj = sourcej;
+                int tempi = currenti+x[i];
+                int tempj = currentj+y[i];
 
-                for (int i = 0; i < 4; i++)
-                {
-                    int currenti = sourcei + x[i];
-                    int currentj = sourcej + y[i];
-
-                    // Do not set the current path as a traversed
-                    if(grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
-                    {
-                        traversedpaths[currenti][currentj] = 1;
-                        // Set next open path
-                        sourcei = currenti;
-                        sourcej = currentj;
+                if(tempi >= 0 && tempi < n && tempj >= 0 && tempj < n) {
+                    if (grid[tempi][tempj] == 3 && traversedpaths[tempi][tempj] != TRAVERSEDCONS) {
+                        traversedpaths[currenti][currentj] = TRAVERSEDCONS;
+                        currenti = tempi;
+                        currentj = tempj;
                         break;
-                    } else {
-                        // Don't set flags because another path need to be checked
                     }
-                    
                 }
             }
-            else // No Path available
+        }
+        else // If no path available
+        {
+            if (isAlternatepathAvailable && backtrackcount > 0)
             {
-                // Check whether alternate path exists (or) not
-                if (isAlternatepathAvailable)
-                {
-                    // Set source to altpath
-                    sourcei = altpathi;
-                    sourcej = altpathj;
+                int pathcount1 = getPathcount(n,grid,traversedpaths,currenti,currentj,directioncount,x,y);
 
-                    for (int i = 0; i < 4; i++)
-                    {
-                        int currenti = sourcei + x[i];
-                        int currentj = sourcej + y[i];
+                if(pathcount1 == 0) {
+                    traversedpaths[currenti][currentj] = TRAVERSEDCONS;
+                    backtrackcount--;
 
-                        if(grid[currenti][currentj] == 3 && traversedpaths[currenti][currentj] == 0)
-                        {
-                            // traversedpaths[currenti][currentj] = 1;
-                            // Set next open path
-                            sourcei = currenti;
-                            sourcej = currentj;
-                            break;
-                        } else {
-                            isAlternatepathAvailable = ispathfound = proceed = false;
-                        }
-                        
-                    }
-                    printf("altpath \n");
-                } else {
-                    ispathfound = proceed =false;
+                    currenti = backtracks[backtrackcount][0];
+                    currentj = backtracks[backtrackcount][1];
                 }
-                
+            }
+            else
+            {
+                proceed = 0;
             }
             
         }
-        else
-        {
-            // No need to proceed
-            break;
-        }
     }
+    
+    printf("backtrack count : %d\n",tempBTC);
+    printBacktracks(n,tempBTC,backtracks);
 
-    printf("traversedpath \n");
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            printf("%d",traversedpaths[i][j]);
-        }
-        printf("\n");
-    }
+    printTraversedPaths(n,traversedpaths);
 
-    printf("%s\n",(ispathfound) ? "1" : "0");
+    printf("\nIspathfound : %d\n",ispathfound);
     return 0;
 }
 
-void setTraversedPaths(int n,int traversedpaths[n][n])
+int getPathcount(int n,int grid[n][n],int traversedpaths[n][n],int currenti,int currentj,int directioncount,int x[],int y[])
+{
+    int pathcount = 0;
+
+    for (int i = 0; i < directioncount; i++)
+    {
+        int tempi = currenti+x[i];
+        int tempj = currentj+y[i];
+
+        pathcount = (tempi >= 0 && tempi < n && tempj >= 0 && tempj < n)
+                        ? (grid[tempi][tempj] == 3 && traversedpaths[tempi][tempj] != TRAVERSEDCONS)
+                            ? pathcount + 1 
+                            : pathcount
+                        : pathcount;
+    }
+    
+    return pathcount;
+}
+
+void initializeTraversedPaths(int n,int traversedpaths[n][n])
 {
     for (int i = 0; i < n; i++)
     {
@@ -204,4 +185,29 @@ void setTraversedPaths(int n,int traversedpaths[n][n])
             traversedpaths[i][j] = 0;
         }
     }
+}
+
+void printTraversedPaths(int n,int traversedpaths[n][n])
+{
+    printf("\nTraversedpaths \n");
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("%d",traversedpaths[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void printBacktracks(int n,int backtrackcount,int backtracks[n][2])
+{
+    printf("\nBacktrack path :\n");
+
+    for (int i = 0; i < backtrackcount; i++)
+    {
+        printf("%d,%d\n",backtracks[i][0],backtracks[i][1]);
+    }
+    printf("\n");
 }
