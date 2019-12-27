@@ -1,0 +1,8 @@
+Strings :
+// https://stackoverflow.com/questions/5171803/number-of-sub-sequences-in-a-given-sequence
+Subset: 2^n (Order doesn't matter in sets)
+Subsequence: 2^n (Since we keep the original ordering, this is the same.)
+Substring: n(n+1) * 1/2 (Elements must be consecutive)
+
+
+
