@@ -7,7 +7,7 @@
 int main()
 {
     int n,totalsubseqcount = 0;
-    char string[] = "123";
+    char string[] = "abcde";
     n = strlen(string);
 
     for (int i = 0; i < n; i++) // Go till length n

@@ -108,6 +108,8 @@ https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays/0
 26 (Paranthesis validation using stack)
 27 (Mathmetical expression validation)
 27 (Find pair) https://practice.geeksforgeeks.org/problems/find-pair-given-difference/0
+28 (SubSets) https://practice.geeksforgeeks.org/problems/subset-sum-problem/0
+
 
 
 // ==========================================> Complex sets <========================================================
