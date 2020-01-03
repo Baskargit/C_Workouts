@@ -109,8 +109,9 @@ https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays/0
 27 (Mathmetical expression validation)
 27 (Find pair) https://practice.geeksforgeeks.org/problems/find-pair-given-difference/0
 28 (SubSets) https://practice.geeksforgeeks.org/problems/subset-sum-problem/0
-
-
+29 (String Permutations) https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+30 (Tower of Hanoi) https://www.geeksforgeeks.org/iterative-tower-of-hanoi/
+31 (Sum-String Nutanix) https://practice.geeksforgeeks.org/problems/sum-string/0
 
 // ==========================================> Complex sets <========================================================
 
