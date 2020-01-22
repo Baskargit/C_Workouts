@@ -4,6 +4,7 @@
         "regex": "c",
         "bitset": "c",
         "chrono": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "cstdio": "c"
     }
 }

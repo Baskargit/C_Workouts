@@ -1,0 +1,5 @@
+Interview experience of Experienced C/C++ developer
+
+Round 1 (Simple coding round)
+
+QUES1: Count no of "words","lines","spaces" in the given file

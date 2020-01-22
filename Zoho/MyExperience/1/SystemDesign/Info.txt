@@ -1,0 +1,8 @@
+Design a In-Memory file management system
+
+Module1 : Create new directory and file in all Levels
+Module2 : List all directories and files
+Module3 : Update file content
+Module4 : Update directory and file names
+Module5 : Delete directory and file
+Module6 : Restore deleted directories and files

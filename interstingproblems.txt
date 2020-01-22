@@ -148,3 +148,10 @@ Insertionsort
 
 Topic : ====> "{Searching}"
 BinarySearch
+
+Topic : ====> "{Greedy Algorithm}"
+KnapSack
+Railway platforms needed
+Job Sequencing
+LRU cache
+N-Queen
