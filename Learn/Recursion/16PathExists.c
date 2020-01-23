@@ -31,27 +31,31 @@ int main()
     
     int matrix[n][m];
     int traversedPaths[n][m];
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            scanf("%d",&matrix[i][j]);
-            traversedPaths[i][j] = (matrix[i][j] == PATH) ? TRAVERSE : 0;
-        }
-    }
+    int sourcei = -1,sourcej = -1;
+    bool destinationExists = false,sourceExists = false;
 
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            if (matrix[i][j] == SOURCE)
-            {
-                printf("Pathexists : %d\n",pathexists(n,m,matrix,i,j,traversedPaths));
-                i = n;
-                break;
-            }   
+            scanf("%d",&matrix[i][j]);
+            traversedPaths[i][j] = (matrix[i][j] != WALL) ? TRAVERSE : 0;
+            sourcei = (matrix[i][j] == SOURCE) ? i : sourcei;
+            sourcej = (matrix[i][j] == SOURCE) ? j : sourcej;
+            destinationExists = (matrix[i][j] == DESTINATION) ? true : destinationExists;
+            sourceExists = (matrix[i][j] == SOURCE) ? true : sourceExists;
         }
     }
+
+    if (sourceExists && destinationExists) // If there is a SOURCE and DESTINATION
+    {
+        printf("Pathexists : %s\n",pathexists(n,m,matrix,sourcei,sourcej,traversedPaths) ? "Yes" : "No");
+    }
+    else
+    {
+        printf("Missing \"SOURCE\" or \"DESTINATION\"\n");
+    }
+    
     return 0;
 }
 
@@ -107,7 +111,30 @@ bool pathexists(int n,int m,int matrix[n][m],int currentN,int currentM,int trave
 5 5
 3 3 1 0 3
 3 3 0 3 3
-3 0 2 3 3
+3 0 2 0 3
 3 0 0 0 3
 3 3 3 3 3
+
+21 16
+3 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3 3 3 1 3 3 3 3 3 3 3 3 3 3 3 3
 */
