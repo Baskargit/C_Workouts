@@ -1,83 +1,96 @@
 /*
-Given a N X N matrix (M) filled with 1, 0, 2, 3. 
-The task is to find whether there is a path possible from source to destination, 
-while traversing through blank cells only. 
+Search a Word in a 2D Grid of characters in all 8 directions
 
-You can traverse up, down, right and left.
+3 13
+GEEKSFORGEEKS
+GEEKSQUIZGEEK
+IDEQAPRACTICE
 
-A value of cell 1 means Source.
-A value of cell 2 means Destination.
-A value of cell 3 means Blank cell.
-A value of cell 0 means Blank Wall.
-
-Note: there is only single source and single destination.
 */
 
 #include<stdio.h>
 #include<stdbool.h>
+#include<string.h>
 
-#define WALL 0
-#define SOURCE 1
-#define DESTINATION 2
-#define PATH 3
-#define TRAVERSE 1
-
-bool pathexists(int n,int m,int matrix[n][m],int currentN,int currentM,int traversedPaths[n][m]);
+bool wordExists(int n,int m,int currentN,int currentM,char grid[n][m],char searchFor[],int searchForlen,int searchForPtr,bool searchInProgress);
 
 int main()
 {
     int n,m;
     scanf("%d%d",&n,&m);
-    
-    int matrix[n][m];
-    int traversedPaths[n][m];
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            scanf("%d",&matrix[i][j]);
-            traversedPaths[i][j] = (matrix[i][j] == PATH) ? TRAVERSE : 0;
-        }
-    }
 
+    char grid[n][m];
+    char searchFor[] = "GEEKSS";
     for (int i = 0; i < n; i++)
     {
+        getchar();
         for (int j = 0; j < m; j++)
         {
-            if (matrix[i][j] == SOURCE)
-            {
-                printf("Pathexists : %d\n",pathexists(n,m,matrix,i,j,traversedPaths));
-                i = n;
-                break;
-            }   
+            scanf("%c",&grid[i][j]);
         }
     }
+    
+    wordExists(n,m,0,0,grid,searchFor,strlen(searchFor),0,false);
     return 0;
 }
 
-bool pathexists(int n,int m,int matrix[n][m],int currentN,int currentM,int traversedPaths[n][m])
+bool wordExists(int n,int m,int currentN,int currentM,char grid[n][m],char searchFor[],int searchForlen,int searchForPtr,bool searchInProgress)
 {
-    if (currentN >= 0 && currentN < n && currentM >=0 && currentM < m && traversedPaths[currentN][currentM] == TRAVERSE)
+    if (currentN >= 0 && currentN < n && currentM >=0 && currentM < m)
     {
-        if (matrix[currentN][currentM] == DESTINATION)
+        if (searchInProgress)
         {
-            return true; // Path found
-        }
-        else if (matrix[currentN][currentM] == WALL)
-        {
-            return false; // Wall 
+            if (searchForPtr == searchForlen) // Word matched
+            {
+                return true;
+            }
+            else
+            {
+                if (grid[currentN][currentM] == searchFor[searchForPtr]) // continue searching
+                {
+                    return wordExists(n,m,currentN - 1,currentM,grid,searchFor,searchForlen,searchForPtr + 1,true)
+                            ? true
+                            : wordExists(n,m,currentN-1,currentM+1,grid,searchFor,searchForlen,searchForPtr + 1,true)
+                            ? true
+                            : wordExists(n,m,currentN,currentM+1,grid,searchFor,searchForlen,searchForPtr + 1,true)
+                            ? true
+                            : wordExists(n,m,currentN+1,currentM+1,grid,searchFor,searchForlen,searchForPtr + 1,true)
+                            ? true
+                            : wordExists(n,m,currentN+1,currentM,grid,searchFor,searchForlen,searchForPtr + 1,true)
+                            ? true
+                            : wordExists(n,m,currentN+1,currentM-1,grid,searchFor,searchForlen,searchForPtr + 1,true)
+                            ? true
+                            : wordExists(n,m,currentN,currentM-1,grid,searchFor,searchForlen,searchForPtr + 1,true)
+                            ? true
+                            : wordExists(n,m,currentN-1,currentM-1,grid,searchFor,searchForlen,searchForPtr + 1,true);
+                }
+                else
+                {
+                    return false; // letter Not matched
+                }
+                
+            }
         }
         else
         {
-            traversedPaths[currentN][currentM] = 0;
+            bool wordExist = false;
 
-            return (pathexists(n,m,matrix,currentN-1,currentM,traversedPaths))
-                    ? true
-                    : (pathexists(n,m,matrix,currentN,currentM+1,traversedPaths))
-                    ? true
-                    : (pathexists(n,m,matrix,currentN+1,currentM,traversedPaths))
-                    ? true
-                    : pathexists(n,m,matrix,currentN,currentM-1,traversedPaths);
+            for (; currentN < n; currentN++)
+            {
+                for (currentM = 0; currentM < m; currentM++)
+                {
+                    if (grid[currentN][currentM] == searchFor[0]) // If first letter matched
+                    {
+                        if (wordExists(n,m,currentN,currentM,grid,searchFor,searchForlen,0,true))
+                        {
+                            wordExist = true;
+                            printf("Match found at : %d,%d\n",currentN,currentM);
+                        }
+                    }
+                }   
+            }
+
+            return wordExist;
         }
     }
     else
@@ -87,27 +100,12 @@ bool pathexists(int n,int m,int matrix[n][m],int currentN,int currentM,int trave
 }
 
 /*
-3 3
-2 3 3
-0 0 3
-1 3 3
 
-3 3
-2 0 3
-0 0 3
-1 3 3
+3 13
+GEEKSFORGEEKS
+GEEKSQUIZGEEK
+IDEQAPRACTICE
 
-5 5
-3 3 1 0 3
-3 3 0 3 3
-3 0 2 3 3
-3 0 3 0 3
-3 3 3 3 3
 
-5 5
-3 3 1 0 3
-3 3 0 3 3
-3 0 2 3 3
-3 0 0 0 3
-3 3 3 3 3
+
 */
