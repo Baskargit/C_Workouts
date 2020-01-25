@@ -1,0 +1,41 @@
+https://www.geeksforgeeks.org/zoho-corporation-internship-cum-offer-experience/
+
+Round 2 ( programming test – 5 questions )
+
+In this round, we’re expected to write code for the given problem in any of the three languages ( c, c++, java ).
+
+Q.no.1)  Given N. print the following snake pattern (say N = 4). condition:  must not use arrays ( 1D array  or 2D array like Matrix ).
+
+1   2   3   4
+
+8   7   6    5
+
+9   10  11   12
+
+16  15  14  13
+
+ 
+
+Q.no.2)  Given N. print the Latin Matrix (say N = 3). condition:  must not use strings(aka character literals), arrays (both 1D and 2D), inbuilt functions(like rotate).
+
+
+A   B   C
+
+B   C   A
+
+C   A   B
+
+Q.no.3)   Given a number N. find the minimum count of numbers in which N can be represented as a sum of numbers x1, x2, … xn. where xi is number whose digits are 0s and 1s.
+
+example 1)  i/p :  N = 33
+
+o/p : count = 3.     33( 11 + 11 + 11 )
+
+some other possibilities of 33 is (11 + 11 + 10 + 1),   (11 + 10 + 10 + 1 + 1 ), (10 + 10 + 10 + 1 + 1 + 1)
+
+Q.no.4)   Finding all permutations of a string. ( backtracking approach ).
+
+Q.no.5)   Given an array of integers, write a program to re-arrange the array in the given form.
+
+1st_largest, 1st_smallest, 2nd_largest, 2nd_smallest, 3rd_largest ……. etc.
+

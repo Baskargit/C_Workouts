@@ -38,7 +38,7 @@ int main()
     scanf("%d%d",&n,&m);
 
     char grid[n][m];
-    char searchFor[] = "GEEKSS";
+    char searchFor[] = "GEEK";
     for (int i = 0; i < n; i++)
     {
         getchar();
