@@ -2,6 +2,8 @@
 
 Print all the possible subsets of array which adds up to give a sum.
 
+https://www.geeksforgeeks.org/perfect-sum-problem-print-subsets-given-sum/
+
 Input: 
 array = {2, 3, 5, 8, 10}
 sum=10
@@ -13,40 +15,34 @@ Output:
 
 */
 
-#include<stdio.h>
-#include<stdbool.h>
+// Working soln
 
-void printSubsets(int n,int array[n],int totalSum,int currentN,int currentSum);
-bool printSubsets1(int n,int array[n],int totalSum,int currentN,int currentSum);
-bool printSubsets2(int n,int array[n],int totalSum,int currentN,int currentSum,int tempSubSet[n],int tempSubSetN,int subSets[n][n],int *totalSubSetCount);
-void printfSubsets(int n,int subsetCount, int subSets[subsetCount][n+1]);
+#include<stdio.h>
+
+int getSubsetsCount(int n,int array[n],int totalSum,int currentN,int currentSum,int tempSubSet[n],int tempSubSetN);
 
 static int callCount = 0;
 
 int main()
 {
     int n;
-    // int array[] = {2,3,5,8,10,5,2};
-    int array[] = {1,2,3,4,5};
+    // int array[] = {2,3,5,8,10,5,2}; // 10
+    // int array[] = {1,2,3,4,5}; // 10
+    // int array[] = {2,23,12,12,19,18,5,8,6,13,24,18,11,5,3,23}; // 59
+    int array[] = { 2, 0, 5, 7, -1, 0, 8, 4, 1, 3, -2, 0, 0, 2, -2 }; // 22
     n = sizeof(array)/sizeof(int);
-    int sum = 10;
+    int sum = 22;
 
-    int tempSubSet[n];
-    int subSets[n][n + 1];
-    int subsetCount = 0;
+    int tempSubSet[n]; // store subsets temporarily
+    int subsetCount = getSubsetsCount(n,array,sum,0,0,tempSubSet,0); // get total possible subSets
 
-    // printSubsets(n,array,sum,0,0);
-    // printSubsets1(n,array,sum,0,0);
-    printSubsets2(n,array,sum,0,0,tempSubSet,0,subSets,&subsetCount);
-    printf("\n");
-    // printf("Total subset count : %d\n",subsetCount);
-    // printf("callCount : %d\n",callCount);
+    printf("\nTotal subset count : %d\n",subsetCount);
+    printf("callCount : %d\n",callCount);
 
-    // printfSubsets(n,subsetCount,subSets);
     return 0;
 }
 
-bool printSubsets2(int n,int array[n],int totalSum,int currentN,int currentSum,int tempSubSet[n],int tempSubSetN,int subSets[n][n],int *totalSubSetCount)
+int getSubsetsCount(int n,int array[n],int totalSum,int currentN,int currentSum,int tempSubSet[n],int tempSubSetN)
 {
     ++callCount;
 
@@ -54,110 +50,48 @@ bool printSubsets2(int n,int array[n],int totalSum,int currentN,int currentSum,i
     {
         if (array[currentN] + currentSum == totalSum)
         {
-            tempSubSet[tempSubSetN] = array[currentN];
-
-            // print
+            // Print the subsets
             printf("\n{");
-            for (int i = 0; i < tempSubSetN + 1; i++)
+            for (int i = 0; i < tempSubSetN; i++)
             {
                 printf("%d,",tempSubSet[i]);
             }
-            printf("}");
-            
-            *totalSubSetCount += 1;
-            return true;
+            printf("%d}",array[currentN]);
+
+            return 1 + getSubsetsCount(n,array,totalSum,currentN+1,currentSum,tempSubSet,tempSubSetN);
         }
         else if (array[currentN] + currentSum < totalSum)
         {
             tempSubSet[tempSubSetN] = array[currentN];
 
-            // Included
-            printSubsets2(n,array,totalSum,currentN+1,currentSum+array[currentN],tempSubSet,tempSubSetN+1,subSets,totalSubSetCount);
-            
-            // Not-included
-            return printSubsets2(n,array,totalSum,currentN+1,currentSum,tempSubSet,tempSubSetN,subSets,totalSubSetCount);
+            // Included + Not-included
+            return getSubsetsCount(n,array,totalSum,currentN+1,currentSum+array[currentN],tempSubSet,tempSubSetN+1) + getSubsetsCount(n,array,totalSum,currentN+1,currentSum,tempSubSet,tempSubSetN);
         }
         else
         {
+            // else { array[currentN] + currentSum > totalSum } , so call next element
             // Not-included but call next n+1
-            return printSubsets2(n,array,totalSum,currentN+1,currentSum,tempSubSet,tempSubSetN,subSets,totalSubSetCount);
+            return getSubsetsCount(n,array,totalSum,currentN+1,currentSum,tempSubSet,tempSubSetN);
         }
     }
     else
     {
-        return false;
+        return 0;
     }
 }
 
-void printfSubsets(int n,int subsetCount, int subSets[subsetCount][n+1])
-{
-    printf("\n");
-    for (int i = 0; i < subsetCount; i++)
-    {
-        printf("{");
-        for (int j = 1; j <= (subSets[i][0] >= 0 && subSets[i][0] <= n) ? subSets[i][0] : 0; j++)
-        {
-            printf("%d,",subSets[i][j]);
-        }
-        printf("}");
-    }
-    printf("\n");
-}
+/*
+Corner cases :
 
-bool printSubsets1(int n,int array[n],int totalSum,int currentN,int currentSum)
-{
-    // printf("callCount : %d\n",++callCount);
+Input:
+16
+2 23 12 12 19 18 5 8 6 13 24 18 11 5 3 23
+59
 
-    if (currentN < n)
-    {
-        if (array[currentN] + currentSum == totalSum)
-        {
-            printf("%d ",array[currentN]);
-            return true;
-        }
-        else if (array[currentN] + currentSum < totalSum)
-        {
-            if (printSubsets1(n,array,totalSum,currentN + 1,currentSum + array[currentN])) // Included
-            {
-                printf("%d,",array[currentN]);
-            }
-            
-            printSubsets1(n,array,totalSum,currentN + 1,currentSum); // Not-included
-        }
-        else
-        {
-            return false;
-        }
-    }
-    else
-    {
-        return false;
-    }
-}
+Its Correct output is:
+335
 
-void printSubsets(int n,int array[n],int totalSum,int currentN,int currentSum)
-{
-    if (currentN < n)
-    {
-        if (array[currentN] + currentSum == totalSum)
-        {
-            printf("Found\n");
-            return;
-        }
-        else if (array[currentN] + currentSum < totalSum)
-        {
-            printSubsets(n,array,totalSum,currentN + 1,currentSum + array[currentN]); // Included
-            printSubsets(n,array,totalSum,currentN + 1,currentSum); // Not-included
-        }
-        else
-        {
-            return;
-        }
-    }
-    else
-    {
-        return;
-    }
-    
-}
+And Your Code's output is:
+331
 
+*/
