@@ -26,7 +26,8 @@ static int callCount = 0;
 int main()
 {
     int n;
-    int array[] = {2,3,5,8,10,5,2};
+    // int array[] = {2,3,5,8,10,5,2};
+    int array[] = {1,2,3,4,5};
     n = sizeof(array)/sizeof(int);
     int sum = 10;
 
@@ -37,10 +38,11 @@ int main()
     // printSubsets(n,array,sum,0,0);
     // printSubsets1(n,array,sum,0,0);
     printSubsets2(n,array,sum,0,0,tempSubSet,0,subSets,&subsetCount);
-    printf("Total subset count : %d\n",subsetCount);
-    printf("callCount : %d\n",callCount);
+    printf("\n");
+    // printf("Total subset count : %d\n",subsetCount);
+    // printf("callCount : %d\n",callCount);
 
-    printfSubsets(n,subsetCount,subSets);
+    // printfSubsets(n,subsetCount,subSets);
     return 0;
 }
 
@@ -53,12 +55,14 @@ bool printSubsets2(int n,int array[n],int totalSum,int currentN,int currentSum,i
         if (array[currentN] + currentSum == totalSum)
         {
             tempSubSet[tempSubSetN] = array[currentN];
-            subSets[*totalSubSetCount][0] = tempSubSetN + 1; // set size of subset
 
-            for (int i = 0; i < tempSubSetN + 1; i++) // Copy the current subset to master subSets[][] array
+            // print
+            printf("\n{");
+            for (int i = 0; i < tempSubSetN + 1; i++)
             {
-                subSets[*totalSubSetCount][i + 1] = tempSubSet[i];
+                printf("%d,",tempSubSet[i]);
             }
+            printf("}");
             
             *totalSubSetCount += 1;
             return true;

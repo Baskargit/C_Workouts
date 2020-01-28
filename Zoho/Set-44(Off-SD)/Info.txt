@@ -1,0 +1,28 @@
+
+https://www.geeksforgeeks.org/zoho-interview-experience-for-software-developer/
+
+Zoho Interview Experience for Software Developer
+Round 1: 
+30 apti questions out  of which 15 logical apti and 15 technical c apti. Logical  C apti very basic and most of them will make you think logical to get the answer, instead of using some xyz formula stuff. And for C apti  2 -3 pointer, 4 array, 4 find output for given snippet assuming the above code execute properly, 4-5 recursive based questions where asked.
+
+Round 2: 
+In this round 5 questions given at one after one. We are supposed to tell the logic for the question and they may ask to reiterate if the logic is not that good. You have to code in the ide and have to clear all the edge cases.
+
+Convert integer to binary (using recursive).
+Reverse the string without disturbing the vowels and space.
+Get the repeated numbers in the array
+On problem related to merge sort.
+On problem related to linked list where asked.
+50 attended out of which 13 stepped for next round
+
+
+
+Round 3:
+
+This is called as complex coding round in which are given with a train ticket reservation problem in which extra feature enhancement is given one after another.
+
+first simple reservation for 50 seats from A to F.
+After stations are added in middle like B, C, D, E. Where people can board any station and get down at any station assuming train is going from A to F.
+Then Waiting list are to be added after 50 seats reserved and if any reserved seat is cancelled we have to check the waiting list and need to confirm the seat if possible.
+After which we need to print the details of the PNR details.
+This round seem to be easy but took some time to complete and finally out 13.  5  got offer letter including me

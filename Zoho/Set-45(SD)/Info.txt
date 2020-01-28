@@ -1,0 +1,104 @@
+
+https://www.geeksforgeeks.org/zoho-software-developer-interview-experience/
+
+Zoho Software Developer Interview Experience
+I was interviewed in Zoho’s Chennai office in November 2019. The whole process took two weeks.
+
+Round 1: First round was a written round of 20 questions for 75 minutes. 10 questions from C and 10 based on aptitude. The C  questions tested your knowledge on basic C concepts like functions, recursion, string manipulations etc. Aptitude questions were from ratio, average, simple puzzles, ages etc. But aptitude was simple than expected. You need to write all the answers at least only then there is a possibility that you can get into it.
+
+Round 2: I got call from HR after three days to attend the second round. I also received a mail for second round which held next week. In this round I was given three programming questions for 75 minutes.
+
+
+
+Questions were:
+
+1. -1 represents ocean and 1 represents land find the number of islands in the given matrix.
+
+Input:   n*n matrix
+
+       1 -1 -1  1
+      -1  1 -1  1
+      -1 -1  1 -1
+      -1 -1 -1  1
+Output: 2 (two islands that I have 
+bold in matrix at 1, 1 and 2, 2)
+2. Print all the possible subsets of array which adds up to give a sum.
+
+Input: array{2, 3, 5, 8, 10}
+       sum=10
+Output: {2, 3, 5}
+       {2, 8}
+       {10}
+3. There is a circular queue of processes. Every time there will be certain no of process skipped and a particular start position. Find the safe position.
+
+Input: Number of process:5
+       Start position:3
+       Skip: 2nd
+Output: 1 will be the safest position
+(Logic: 1 2 3 4 5 starting from 3, 5th process will be skipped
+        1 2 3 4 5 process 2 will be skipped
+        1 2 3 4 5 process 4 will be skipped
+        1 2 3 4 5 process 3 will be skipped, so safest process is 1.
+Here I was able to solve two questions and was selected for third round. Those who were not able to solve but are still good at explaining logic then they were considered for debugging team and went for further rounds. But this won’t happen every time. Only if they see any potential inside you to work for them sincerely they may consider you for other teams or else you are rejected at that point itself.
+Round 3: Third round was application development round. Question which I got was “Event Management”. There were around 20 events which are about to happen. Manage all the events according to the given conditions.
+List of events are given below none of them has any specific order to be followed.Conditions
+are :1. Event should start from 9.00 AM
+2. No overlapping or any time gap between two events.
+3. The last event should complete by 4 or to maximum by 5. There is a compulsory event
+called “Networking hands-on” which has to be started not earlier than 4.00 PM nor later
+than 5.00 PM. The remaining events should be scheduled following day until all the
+events are covered.
+4. Every event has specific duration mentioned along with it and some events contain a
+keyword “lightning” which means that particular event’s duration is 5 minutes.
+5. There should be no event scheduled between 12 to 1 PM and kept for lunch.
+
+Input:
+
+Welcome event 30 mins
+C programming 45 mins
+Working with Java Beans 30 mins
+Ruby on Rails programming 60 mins
+Introduction to Groovy 60 mins
+Rails Debugging 45 mins
+Tips and tricks in C 30 mins
+Back-end development in MySQL 50 mins
+Sit down and Take notes lightning
+Clojure Introduction 45 mins
+Team Management Concepts 30 mins
+Introduction to Java Frameworks lightning
+Working with Angular JS 45 mins
+Ruby on Rails programming web development concepts 60 mins
+Introduction to Kotlin Java 60 mins
+Debugging and Testing products 60 mins
+Documenting a software 40 mins
+Server side development 60 mins
+
+Output:
+Schedule for Day 1
+09:00 AM Welcome event 30 mins
+09:30 AM C programming 45 mins
+10:15 AM Ruby on Rails programming 60 mins
+11:15 AM Rails Debugging 45 mins
+12:00 PM LUNCH
+01:00 PM Working with Java Beans 30 mins
+01:30 PM Introduction to Groovy 60 mins
+02:30 PM Tips and tricks in C 30 mins
+03:00 PM Back-end development in MySQL 50 mins
+03:50 PM Sit down and Take notes lightning
+03:55 PM Clojure Introduction 45 mins
+04:40 PM Networking Hands-on
+
+Schedule for Day 2
+09:30 AM Team Management Concepts 30 mins
+09:30 AM Introduction to Java Frameworks lightning
+09:35 AM Working with Angular JS 45 mins
+10:20 AM Ruby on Rails programming web development concepts 60 mins
+11:20 AM Documenting a software 40 mins
+12:00 PM LUNCH
+01:00 PM Introduction to Kotlin Java 60 mins
+02:00 PM Debugging and Testing products 60 mins
+03:00 PM Server side development 60 mins
+04:00 PM Networking Hands-on
+
+
+Round 4 and 5: These are HR rounds. Technical hr might check your basic understanding of concepts in programming and ask you to explain about your 3rd round question and how you can enhance your code. Common HR will ask basic questions about yourself, your strength and weaknesses, why zoho etc like that. All the best!
