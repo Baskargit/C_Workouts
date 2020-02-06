@@ -1,0 +1,73 @@
+
+https://www.geeksforgeeks.org/zoho-interview-experience-off-campus-for-java-software-developer/
+
+Round 2: The second round is a short coding round consisted of 9 questions based on data structures like the tree, arrays, and optimization problems. This round duration is of 3 hours. I had solved 6 out of 9 questions completely with the least time and space complexity. They looked for more optimization, so I did. I don’t have enough time to write complete code for the 7th question since I had spent more time building the tree data structure, so I told only the logic of how I’m approaching the problem. So in total, I solved 6 completely, and 1 logically explained.
+
+I don’t remember all the questions, I try to like recall the questions that I remember. The questions listed below are not in the same order:
+
+1.Reverse the path from root node to the leaf node in the tree
+
+2.Given an array of values persons[], each represents the weight of the persons. 
+There will be infinite bikes available. 
+Given a value K which represents the maximum weight that a bike accommodates. 
+Along with that one more condition, a bike can carry two persons at a time. 
+You need to find out the least number of times, the bike trips are made.
+
+3.Assume there exists infinite grid, you’re given initial position x, y. Inputs will be movements either L or R or U or D. After n inputs, you need to give the current position.
+Input: 
+4 5 //initial position x, y
+9 //number of movements
+U L R R D D U L R //7 movements
+Output:
+5 5
+
+4.Given a matrix NxN, you are initially in the 0, 0 position. The matrix is filled with ones and zeros. Value “one” represents the path is available, while “zero” represents the wall. You need to find the can you able to reach the (N-1)x(N-1) index in the matrix. You can move only along the right and down directions if there’s “one” available.
+Input:
+5 //N value
+1 0 1 0 0
+1 1 1 1 1
+0 0 0 1 0
+1 0 1 1 1
+0 1 1 0 1
+Output:
+Yes
+
+5.Given an array of integers, compute the maximum value for each integer in the index, by either summing all the digits or multiplying all the digits. (Choose which operation gives the maximum value)
+Input:
+5
+120 24 71 10 59
+Output:
+3 8 8 1 45
+Explanation: For index 0, the integer is 120. Summing the digits will give 3, and whereas Multiplying the digits gives 0. Thus, maximum of this two is 3.
+
+They skipped the long coding round, and moved on to the F2F interviews, since only few were met their expectations.
+
+==========================================================>
+
+Round 3: There were many panels, among them I was called into one. In my panel, there were two extra-ordinary persons. There are the ones who interviewed me. They started me with the very basic F2F interview question “Tell me about yourself”. And then asked me one very interesting puzzle question. I almost cracked it, but not fully. They were very friendly and guided me then and then and finally the opened the solution since I have taken too much time in it. Then they asked about my internship experience & the project I done there, and some competitive programming questions based on bit manipulation, string handling, and array problems. Then they moved on OOPS, inheritance and Java questions. I answered every one of them, they were impressed and asked me to wait outside. First, they impressed me with that puzzle solution, then, in turn, I impressed them back in the end.
+
+Puzzle: 10 bags contain equal amount of coins in each, and all coins are weighted the same. But unfortunately out of 10 bags, one bag alone, it contains only defective coins. One flawless coin weight will be 1gm while the one defective coin weighted 1.1gm. You’re given the digital weighing machine. The question is to find which bag contains only defective coins. You should find it in the least number of tries of weighing in the machine.
+
+==========================================================>
+
+Round 4: It was general HR1. Again the same starting question “Tell me about yourself”. He tested me “Is I’m a logical thinker and real-world relating example person”.
+Questions:
+
+A real-world example for public, private, protected
+If you’re a lift contractor, what are the objectives you need to do and what are the answers you need to know before placing lifts in the building.
+Condition statement usage in the real world. Example too
+Round 5: It was general HR2. In this round, they asked more about me.
+Questions:
+
+Tell me about yourself.
+Why Zoho?
+Where do I live right now?
+What is my hometown?
+My family details and background.
+How many questions did I solve in the coding round? What question did you think It’s so difficult?
+Salary expectations.
+When your internship ends and the last date of college?
+What is the least date you can join here?
+Everything ends fine. I’m pretty confident, but I waited for official confirmation. They informed me to leave and you’ll be contacted after 2 days about the result. I attended on Nov 9, 2019. Expected call date: Nov 11, 2019. I waited for the result all day and night. But they surprised me by calling after 5 days on Nov 14, 2019, in evening at 5.30pm. They told me I had been selected. My eyes literally filled with tears. I’ll never forget that Children’s Day. It’s my best ever CHILDREN’s DAY GIFT.
+
+Overall, It’s a wonderful interview experience. I really enjoyed the time I spent there. People, there were more friendly and trying to bring out my best of me. I already failed Zoho on-campus recruitment 2 times and 1 off-campus recruitment. I came to know that On-campus and Off-campus recruitment were totally different. Everyone said, leave it, you can’t make it in Off-campus. But my friends believed me and I too did, there were my greatest strengths. Then I took 6 months’ time to prepare well and invested myself in acing the interviews. And finally, I cracked one of my dream product company. All I can say is “Believe in yourself no matter what and Never ever give up”. All the very best to everyone reading this article.

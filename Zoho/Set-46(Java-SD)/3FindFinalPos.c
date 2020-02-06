@@ -19,7 +19,7 @@ void printFinalPosition(int n,char movements[n],int currentN,int x,int y);
 int main()
 {
     int x,y;
-    scanf("Initial position x,y : %d%d",&x,&y);
+    scanf("%d%d",&x,&y);
     int n;
     scanf("%d",&n);
 
@@ -55,7 +55,7 @@ void printFinalPosition(int n,char movements[n],int currentN,int x,int y)
     }
     else
     {
-        printf("\nFinal position : %d,%d\n",x,y);
+        printf("Final position : %d,%d\n",x,y);
         return;
     }
 }
