@@ -1,1 +1,2 @@
 https://practice.geeksforgeeks.org/problems/find-missing-and-repeating/0/
+https://practice.geeksforgeeks.org/problems/smallest-positive-missing-number/0

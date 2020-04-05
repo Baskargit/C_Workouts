@@ -27,6 +27,8 @@ int main()
 
         if (flag && array[i] >= 0)
         {
+            flag = 0;
+            
             start = (struct PosNum *)malloc(sizeof(struct PosNum));
             start->num = array[i];
             start->next = NULL;
